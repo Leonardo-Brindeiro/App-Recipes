@@ -21,7 +21,6 @@ function ContextProvider({ children }) {
   const [drincat, setDrincat] = useState([]);
   const [drincatBool, setDrincatBool] = useState(false);
   const [mealcat, setMealcat] = useState([]);
-  const [mealcatBool, setMealcatBool] = useState(false);
   const [idRecipeDetails, setIdRecipeDetails] = useState();
   const [renderOneFood, setRenderOneFood] = useState([]);
   const [cocktailApi, setCocktailApi] = useState([]);
@@ -57,8 +56,6 @@ function ContextProvider({ children }) {
       mealcat,
       drincatBool,
       setDrincatBool,
-      mealcatBool,
-      setMealcatBool,
       idRecipeDetails,
       setIdRecipeDetails,
       renderOneFood,
@@ -78,7 +75,7 @@ function ContextProvider({ children }) {
     loading,
     meat,
     idRecipeDetails, renderOneFood, mealApi, cocktailApi,
-    drinke, meale, drincat, mealcat, drincatBool, mealcatBool]);
+    drinke, meale, drincat, mealcat, drincatBool]);
 
   useEffect(() => {
     if (search?.searchType) {

@@ -18,8 +18,7 @@ function Meals() {
     mealcat,
     setMealcat,
     mealcatBool,
-    setMealcatBool,
-    setRedirect,
+
   } = useContext(RecipiesContext);
   const history = useHistory();
 
@@ -46,14 +45,6 @@ function Meals() {
       history.push(redirect);
     }
   }, [history, redirect, setPageTitle, setRoute, setMeale]);
-
-  useEffect(() => {
-    if (redirect) {
-      history.push(redirect);
-      setRedirect('');
-    }
-  });
-
   const size = 12;
 
   useEffect(() => {
@@ -65,13 +56,49 @@ function Meals() {
       newData
         .map((item) => ({ categoryName: item.strCategory }));
       setMealcat(newData);
-      setMealcatBool(true);
     };
     fetchMeal();
   }, []);
   return (
     <div>
       <Header />
+      <button
+        type="button"
+
+      >
+        All
+      </button>
+      <button
+        type="button"
+
+      >
+        Beef
+      </button>
+      <button
+        type="button"
+
+      >
+        Breakfast
+      </button>
+      <button
+        type="button"
+
+      >
+        Chicken
+      </button>
+      <button
+        type="button"
+
+      >
+        Dessert
+      </button>
+      <button
+        type="button"
+
+      >
+        Goat
+      </button>
+
       { mealcatBool
       && mealcat?.map(({ categoryName }, index) => (
         <button
@@ -94,6 +121,7 @@ function Meals() {
           </div>
         )
       )) : (
+
         meals.meals?.map(({ idMeal, strMealThumb, strMeal }, index) => (
           index < size && (
             <div
@@ -108,7 +136,9 @@ function Meals() {
               />
             </div>
           )
-        )))}
+        ))
+
+      )}
       <Footer />
     </div>
   );
